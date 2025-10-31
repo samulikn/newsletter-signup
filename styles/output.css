@@ -8,8 +8,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-400: oklch(70.4% 0.191 22.216);
-    --color-orange-500: oklch(70.5% 0.213 47.604);
     --spacing: 0.25rem;
     --container-xs: 20rem;
     --container-sm: 24rem;
@@ -191,9 +189,6 @@
   .static {
     position: static;
   }
-  .m-auto {
-    margin: auto;
-  }
   .mx-6 {
     margin-inline: calc(var(--spacing) * 6);
   }
@@ -236,29 +231,8 @@
   .hidden {
     display: none;
   }
-  .table {
-    display: table;
-  }
-  .h-auto {
-    height: auto;
-  }
-  .h-full {
-    height: 100%;
-  }
   .h-screen {
     height: 100vh;
-  }
-  .max-h-full {
-    max-height: 100%;
-  }
-  .max-h-screen {
-    max-height: 100vh;
-  }
-  .min-h-full {
-    min-height: 100%;
-  }
-  .min-h-screen {
-    min-height: 100vh;
   }
   .w-full {
     width: 100%;
@@ -266,23 +240,8 @@
   .w-screen {
     width: 100vw;
   }
-  .w-sm {
-    width: var(--container-sm);
-  }
-  .max-w-sm {
-    max-width: var(--container-sm);
-  }
-  .min-w-screen {
-    min-width: 100vw;
-  }
-  .min-w-sm {
-    min-width: var(--container-sm);
-  }
   .min-w-xs {
     min-width: var(--container-xs);
-  }
-  .flex-none {
-    flex: none;
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
@@ -296,20 +255,8 @@
   .items-center {
     align-items: center;
   }
-  .items-start {
-    align-items: flex-start;
-  }
   .justify-between {
     justify-content: space-between;
-  }
-  .justify-center {
-    justify-content: center;
-  }
-  .justify-start {
-    justify-content: flex-start;
-  }
-  .gap-16 {
-    gap: calc(var(--spacing) * 16);
   }
   .space-y-2\.5 {
     :where(& > :not(:last-child)) {
@@ -354,6 +301,9 @@
     --tw-gradient-to: var(--pink);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
+  .object-cover {
+    object-fit: cover;
+  }
   .px-6 {
     padding-inline: calc(var(--spacing) * 6);
   }
@@ -365,9 +315,6 @@
   }
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
-  }
-  .pt-10 {
-    padding-top: calc(var(--spacing) * 10);
   }
   .pb-10 {
     padding-bottom: calc(var(--spacing) * 10);
@@ -431,14 +378,29 @@
       visibility: visible;
     }
   }
-  .invalid\:border-\(--red\) {
-    &:invalid {
-      border-color: var(--red);
+  .peer-invalid\:bg-\(--red100\) {
+    &:is(:where(.peer):invalid ~ *) {
+      background-color: var(--red100);
     }
   }
-  .invalid\:text-\(--red\) {
-    &:invalid {
+  .peer-invalid\:text-\(--red\) {
+    &:is(:where(.peer):invalid ~ *) {
       color: var(--red);
+    }
+  }
+  .peer-empty\:visible {
+    &:is(:where(.peer):empty ~ *) {
+      visibility: visible;
+    }
+  }
+  .peer-empty\:bg-\(--red\) {
+    &:is(:where(.peer):empty ~ *) {
+      background-color: var(--red);
+    }
+  }
+  .invalid\:bg-\(--red100\) {
+    &:invalid {
+      background-color: var(--red100);
     }
   }
   .hover\:bg-linear-to-l\/shorter {
@@ -460,12 +422,6 @@
       }
     }
   }
-  .focus\:outline {
-    &:focus {
-      outline-style: var(--tw-outline-style);
-      outline-width: 1px;
-    }
-  }
   .focus\:outline-\(--blue800\) {
     &:focus {
       outline-color: var(--blue800);
@@ -474,13 +430,6 @@
   .focus\:outline-\(--red\) {
     &:focus {
       outline-color: var(--red);
-    }
-  }
-  .focus\:invalid\:outline-\(--red\) {
-    &:focus {
-      &:invalid {
-        outline-color: var(--red);
-      }
     }
   }
   .md\:m-0 {
@@ -630,51 +579,6 @@
   }
   .lg\:pl-16 {
     @media (width >= 64rem) {
-      padding-left: calc(var(--spacing) * 16);
-    }
-  }
-  .xl\:mt-0 {
-    @media (width >= 80rem) {
-      margin-top: calc(var(--spacing) * 0);
-    }
-  }
-  .xl\:block {
-    @media (width >= 80rem) {
-      display: block;
-    }
-  }
-  .xl\:hidden {
-    @media (width >= 80rem) {
-      display: none;
-    }
-  }
-  .xl\:max-w-5xl {
-    @media (width >= 80rem) {
-      max-width: var(--container-5xl);
-    }
-  }
-  .xl\:basis-96 {
-    @media (width >= 80rem) {
-      flex-basis: calc(var(--spacing) * 96);
-    }
-  }
-  .xl\:flex-row-reverse {
-    @media (width >= 80rem) {
-      flex-direction: row-reverse;
-    }
-  }
-  .xl\:gap-16 {
-    @media (width >= 80rem) {
-      gap: calc(var(--spacing) * 16);
-    }
-  }
-  .xl\:self-center {
-    @media (width >= 80rem) {
-      align-self: center;
-    }
-  }
-  .xl\:pl-16 {
-    @media (width >= 80rem) {
       padding-left: calc(var(--spacing) * 16);
     }
   }

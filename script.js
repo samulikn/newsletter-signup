@@ -11,7 +11,6 @@ const toRemoveClasses = () => {
   input.classList.remove(
     "bg-(--red100)",
     "border-(--red)",
-    "opacity-100",
     "text-(--red)",
     "focus:outline-(--red)"
   );
@@ -39,7 +38,6 @@ form.onsubmit = (e) => {
     input.classList.add(
       "bg-(--red100)",
       "border-(--red)",
-      "opacity-100",
       "text-(--red)",
       "focus:outline-(--red)"
     );
@@ -60,5 +58,4 @@ dismissBtn.addEventListener("click", (e) => {
   successmesage.classList.add("hidden");
   newsletter.classList.remove("hidden");
   input.value = "";
-  input.focus();
 });
