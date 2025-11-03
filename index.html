@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sm:scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
@@ -9,22 +9,21 @@
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
 </head>
 
-<body>
-  <main
-    class="font-roboto h-screen w-screen flex flex-col flex-start md:justify-center items-center bg-(--blue700) md:m-auto">
-    <div id="newsletter">
-      <div class="h-screen bg-(--white) md:rounded-4xl min-w-xs md:h-fit md:max-w-xl lg:max-w-5xl flex flex-col md:justify-center
-              md:m-10 lg:flex-row-reverse pb-10 md:p-7 lg:pl-16 lg:gap-16">
-        <section>
-          <img src="assets/images/illustration-sign-up-mobile.svg" alt="logo-mobile" class="block md:hidden w-full">
-          <img src="assets/images/illustration-sign-up-tablet.svg" alt="logo-tablet" class="hidden md:block lg:hidden">
-          <img src="assets/images/illustration-sign-up-desktop.svg" alt="logo-dektop" class="hidden lg:block">
-        </section>
-        <form id="form" class="mt-10 mx-6 text-(--blue800) md:self-stretch lg:self-center md:mx-0 lg:mt-0 lg:basis-96">
-          <section class="flex flex-col">
-            <h1 class="text-[2.5rem] leading-[100%] font-bold md:text-[3.5rem]">Stay updated!</h1>
+<body class="min-h-screen min-w-screen bg-(--blue700) flex justify-center">
+  <main class="font-roboto flex flex-col sm:justify-center items-center sm:m-auto">
+    <section id="newsletter">
+      <div class="bg-(--white) sm:rounded-4xl sm:max-w-xl xl:max-w-5xl flex flex-col
+              xl:flex-row-reverse pb-10 sm:p-7 xl:pl-16 xl:gap-16">
+        <div>
+          <img src="assets/images/illustration-sign-up-mobile.svg" alt="logo-mobile" class="block sm:hidden w-full">
+          <img src="assets/images/illustration-sign-up-tablet.svg" alt="logo-tablet" class="hidden sm:block xl:hidden">
+          <img src="assets/images/illustration-sign-up-desktop.svg" alt="logo-dektop" class="hidden xl:block">
+        </div>
+        <div class="mt-10 mx-6 text-(--blue800) sm:self-stretch xl:self-center sm:mx-0 xl:mt-5 xl:basis-96">
+          <div class="flex flex-col">
+            <h1 class="text-[2.5rem] leading-[100%] font-bold sm:text-[3.5rem]">Stay updated!</h1>
             <p class="mt-6 text-[1rem] leading-[150%]">Join 60,000+ product managers receiving monthly updates on:</p>
-            <ul role="list" class="my-6 leading-[150%] space-y-2.5">
+            <ul class="my-6 leading-[150%] space-y-2.5">
               <li class="flex">
                 <img src="assets/images/icon-list.svg" alt="icon-list" class="self-start">
                 <p class="pl-4">Product discovery and building what matters</p>
@@ -38,36 +37,36 @@
                 <p class="pl-4">And much more!</p>
               </li>
             </ul>
-          </section>
-          <section class="mt-4 flex flex-col">
+          </div>
+          <form id="form" class="mt-4 flex flex-col">
             <label for="email" class="mb-1.5 flex justify-between text-[0.75rem] font-bold leading-[150%]">Email address
-              <span id="errormsg" class="invisible text-(--red)">Valid email
-                required</span></label>
-            <input type="email" name="email" id="email" placeholder="email@company.com" autofocus required
-              class="focus:outline-(--blue800) cursor-pointer px-6 py-4 border-1 rounded-md text-[1rem] leading-[150%]"
+              <span id="errormessage" aria-live="polite" aria-atomic="true" aria-hidden="true"
+                class="text-(--red)"></span></label>
+            <input type="email" name="email" id="email" placeholder="email@company.com" required
+              class="focus:outline-none border-(--grey) focus:border-(--blue800) cursor-pointer px-6 py-4 border-1 rounded-md text-[1rem] leading-[150%]"
               autocomplete="off" onchange="javascript:handleChangeInput()">
-            <button type="submit" class="my-6 py-4 px-12 rounded-md text-[1rem] font-bold leading-[150%] bg-(--blue800) text-(--white)
+            <button type="submit" class="my-6 py-4 text-center rounded-md text-[1rem] font-bold leading-[150%] bg-(--blue800) text-(--white)
                     transition hover:bg-linear-to-l/shorter from-(--orange) to-(--pink) hover:shadow-2xl 
                     cursor-pointer text-nowrap">
               Subscribe to monthly newsletter</button>
-          </section>
-        </form>
+          </form>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div id="successmessage" class="hidden">
-      <div class="h-screen bg-(--white) flex flex-col md:justify-center md:items-center px-6 text-(--blue800)
-                  md:max-w-lg md:h-auto md:px-16 md:py-12 md:rounded-4xl">
-        <img src="assets/images/icon-success.svg" alt="success-icon" class="self-start mt-36 mb-10 md:mt-0">
-        <h2 class="text-[2.5rem] leading-[100%] mb-6 font-bold md:text-[3.5rem]">Thanks for subscribing!</h2>
-        <p class="text-[1rem] leading-[150%] md:mb-10">A confirmation email has been sent to <span id="mailto"
+    <section id="successmessage" class="hidden">
+      <div class="h-screen bg-(--white) flex flex-col sm:justify-center sm:items-center px-6 text-(--blue800)
+                  sm:max-w-lg sm:h-auto sm:px-16 sm:py-12 sm:rounded-4xl">
+        <img src="assets/images/icon-success.svg" alt="success-icon" class="self-start mt-36 mb-10 sm:mt-0">
+        <h2 class="text-[2.5rem] leading-[100%] mb-6 font-bold sm:text-[3.5rem]">Thanks for subscribing!</h2>
+        <p class="text-[1rem] leading-[150%] sm:mb-10">A confirmation email has been sent to <span id="mailto"
             class="font-bold">ash@loremcompany.com</span>.
           Please open it and click the button inside to confirm your subscription.</p>
         <button id="dismiss" type="button" class="w-full bg-(--blue800) text-(--white) mb-6 mt-auto px-24 py-4 rounded-md
                       transition hover:bg-linear-to-l/shorter from-(--orange) to-(--pink) hover:shadow-2xl cursor-pointer
-                      md:m-0 md:px-30 text-nowrap">Dismiss message</button>
+                      sm:m-0 sm:px-30 text-nowrap">Dismiss message</button>
       </div>
-    </div>
+    </section>
   </main>
   <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv" target="_blank">Frontend Mentor</a>. 
