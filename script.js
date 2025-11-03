@@ -22,13 +22,6 @@ const clearError = () => {
   input.classList.add("focus:border-(--blue800)");
 };
 
-const handleChangeInput = () => {
-  const isHidden = errorMsg.getAttribute("aria-hidden");
-  if (!isHidden || isHidden === "false") {
-    clearError();
-  }
-};
-
 form.onsubmit = (e) => {
   e.preventDefault();
 
@@ -36,7 +29,7 @@ form.onsubmit = (e) => {
   const data = Object.fromEntries(formDataEntries);
   const email = data.email;
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/gi;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
   const validEmail = emailRegex.test(email);
 
@@ -60,6 +53,9 @@ dismissBtn.addEventListener("click", (e) => {
   input.value = "";
 });
 
-input.addEventListener("change", () => {
-  handleChangeInput();
-})
+input.addEventListener("input", () => {
+  const isHidden = errorMsg.getAttribute("aria-hidden");
+  if (!isHidden || isHidden === "false") {
+    clearError();
+  }
+});
