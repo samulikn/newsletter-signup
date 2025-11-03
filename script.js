@@ -23,7 +23,8 @@ const clearError = () => {
 };
 
 const handleChangeInput = () => {
-  if (!errorMsg.getAttribute("aria-hidden")) {
+  const isHidden = errorMsg.getAttribute("aria-hidden");
+  if (!isHidden || isHidden === "false") {
     clearError();
   }
 };
@@ -58,3 +59,7 @@ dismissBtn.addEventListener("click", (e) => {
   newsletter.classList.remove("hidden");
   input.value = "";
 });
+
+input.addEventListener("change", () => {
+  handleChangeInput();
+})
