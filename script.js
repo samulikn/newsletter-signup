@@ -22,6 +22,11 @@ const clearError = () => {
   input.classList.add("focus:border-(--blue800)");
 };
 
+const emailValidation = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+  return emailRegex.test(email);
+};
+
 form.onsubmit = (e) => {
   e.preventDefault();
 
@@ -29,11 +34,9 @@ form.onsubmit = (e) => {
   const data = Object.fromEntries(formDataEntries);
   const email = data.email;
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+  const emailIsValid = emailValidation(email);
 
-  const validEmail = emailRegex.test(email);
-
-  if (!validEmail) {
+  if (!emailIsValid) {
     showError();
     input.focus();
     return;
