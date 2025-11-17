@@ -25,7 +25,7 @@ const clearError = () => {
 const emailValidation = (email) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
   return emailRegex.test(email);
-}
+};
 
 form.onsubmit = (e) => {
   e.preventDefault();
@@ -33,10 +33,6 @@ form.onsubmit = (e) => {
   const formDataEntries = new FormData(e.target);
   const data = Object.fromEntries(formDataEntries);
   const email = data.email;
-
-  // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-
-  // const validEmail = emailRegex.test(email);
 
   const emailIsValid = emailValidation(email);
 

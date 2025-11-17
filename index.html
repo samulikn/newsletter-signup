@@ -12,7 +12,6 @@
 <body class="min-h-screen min-w-screen bg-(--blue700) flex justify-center">
   <main class="font-roboto flex flex-col sm:justify-center items-center sm:m-auto">
     <section id="newsletter">
-      <h2 class="sr-only">Subscribe to Newsletter</h2>
       <div class="bg-(--white) sm:rounded-4xl sm:max-w-xl xl:max-w-5xl flex flex-col
               xl:flex-row-reverse pb-10 sm:p-7 xl:pl-16 xl:gap-16">
         <div>
@@ -26,15 +25,15 @@
             <p class="mt-6 text-[1rem] leading-[150%]">Join 60,000+ product managers receiving monthly updates on:</p>
             <ul class="my-6 leading-[150%] space-y-2.5">
               <li class="flex">
-                <img src="assets/images/icon-list.svg" alt="icon-list" class="self-start pr-4">
+                <img src="assets/images/icon-list.svg" alt="" class="self-start pr-4">
                 Product discovery and building what matters
               </li>
               <li class="flex">
-                <img src="assets/images/icon-list.svg" alt="icon-list" class="self-start pr-4">
+                <img src="assets/images/icon-list.svg" alt="" class="self-start pr-4">
                 Measuring to ensure updates are a success
               </li>
               <li class="flex">
-                <img src="assets/images/icon-list.svg" alt="icon-list" class="self-start pr-4">
+                <img src="assets/images/icon-list.svg" alt="" class="self-start pr-4">
                 And much more!
               </li>
             </ul>
@@ -56,7 +55,7 @@
     </section>
 
     <section id="successmessage" class="hidden">
-      <article class="h-screen bg-(--white) flex flex-col sm:justify-center sm:items-center px-6 text-(--blue800)
+      <div class="h-screen bg-(--white) flex flex-col sm:justify-center sm:items-center px-6 text-(--blue800)
                   sm:max-w-lg sm:h-auto sm:px-16 sm:py-12 sm:rounded-4xl">
         <img src="assets/images/icon-success.svg" alt="success-icon" class="self-start mt-36 mb-10 sm:mt-0">
         <h2 class="text-[2.5rem] leading-[100%] mb-6 font-bold sm:text-[3.5rem]">Thanks for subscribing!</h2>
@@ -66,7 +65,7 @@
         <button id="dismiss" type="button" class="w-full bg-(--blue800) text-(--white) mb-6 mt-auto px-24 py-4 rounded-md
                       transition hover:bg-linear-to-l/shorter from-(--orange) to-(--pink) hover:shadow-2xl cursor-pointer
                       sm:m-0 sm:px-30 text-nowrap">Dismiss message</button>
-      </article>
+      </div>
     </section>
   </main>
   <!-- <div class="attribution">
